@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<h1>edit</h1>
 
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -16,13 +16,15 @@
   <%= f.text_field :name %>
 
   <%= f.label :email %>
-  <%= f.email_field :email %>
-
-  <%= f.label :password %>
+  <%= f.email_field :email, readonly: true %>
   <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
-  <%= f.submit "Create my account" %>
+  <% if @user.myimage && @user.myimage.url %>
+        <%= image_tag @user.myimage.url, class: "card-img-bottom" %>
+  <% end %>
+  <%= f.file_field :myimage %>
+  <%= f.hidden_field :myimage_cache %>
+
+  <%= f.submit "更新" %>
 <% end %>

@@ -19,6 +19,24 @@ class UsersController < ApplicationController
     set_user
   end
 
+  def edit
+    set_user
+    if logged_in?
+      render :edit
+    else
+      redirect_to user_path(current_user),  notice:"編集出来ません。作成者のみ編集可能です"
+    end
+  end
+
+  def update
+    set_user
+      if @user.update(user_params)
+        redirect_to user_path(@user.id), notice:"編集しました"
+      else
+        render :edit
+      end
+  end
+
   private
 
   def set_user
@@ -26,8 +44,9 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :name, :password,
-                                              :password_confirmation)
+    params.require(:user).permit(:email, :name,
+                          :myimage, :myimage_cache,
+                          :password, :password_confirmation)
   end
 
 end
