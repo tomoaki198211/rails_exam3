@@ -1,0 +1,111 @@
+html {
+  background-color: #f0f2f5;
+  position: relative;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  height: 100%;
+  background-color: #f0f2f5;
+}
+
+header {
+  height: 50px;
+  line-height: 50px;
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 5;
+  display: flex;
+}
+
+nav {
+  margin-left: auto;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav ul li {
+  padding: 0 20px;
+}
+
+.header_logo {
+  font-family: cursive;
+  font-size: 1.8rem;
+  margin-left: auto;
+}
+
+.flash {
+  color: red;
+}
+
+.form_error_m {
+  margin-top: 20px;
+  color: red;
+}
+
+.footer {
+  background-color: #f0f2f5;
+}
+
+.card-columns {
+  display: inline-block;
+}
+
+@media (max-width: 1400px) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+.form_content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f2f5;
+}
+
+.form_content p {
+  font-family: cursive;
+  font-size: 2.5rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.login_form {
+  width: 350px;
+  height: 400px;
+  background-color: #ffffff;
+  padding: 0 50px;
+  border: solid 1px;
+}
+
+.sign_form {
+  width: 350px;
+  height: 500px;
+  background-color: #ffffff;
+  padding: 0 50px;
+  border: solid 1px;
+}
+
+.account_error_m {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #f0f2f5;
+  color: red;
+}
