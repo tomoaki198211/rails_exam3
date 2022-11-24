@@ -109,3 +109,23 @@ nav ul li {
   background-color: #f0f2f5;
   color: red;
 }
+
+.wrap {
+  padding-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.item {
+  padding: 30px;
+  width: calc((100% - 30px * 2) / 3);
+  background-color: #fff;
+  justify-content: center;
+}
+
+@media not all and (min-width: 768px) {
+  .item {
+    width: 100%;
+  }
+}
