@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   </head>
   <body>
   <% if logged_in? %>
@@ -18,7 +19,7 @@
         <ul>
           <li>profile</li>
           <li><%= link_to 'allposts', posts_path, class: "text-decoration-none text-dark" %></li>
-          <li><%= link_to '＋post', new_post_path, class: "text-decoration-none text-dark" %></li>
+          <li><%= link_to '+post', new_post_path, class: "text-decoration-none text-dark" %></li>
           <li>favorite</li>
           <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
         </ul>

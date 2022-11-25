@@ -1,12 +1,13 @@
 <div class="wrap">
   <% @posts.each do |post| %>
     <div class="item">
-    <% if post.picture? %>
-      <%= image_tag post.picture.url %>
-    <% end %>
-      <p>投稿者:<%= post.user.name %><br>
-              <%= l post.created_at, format: :long %><br>
-              <%= post.content %></p>
+      <%= link_to post_path(post.id), class: "" do %>
+        <% if post.picture? %>
+          <%= image_tag post.picture.url, class: "post_img"%>
+        <% else %>
+          <%= post.content %></p>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>

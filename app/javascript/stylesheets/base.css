@@ -43,7 +43,7 @@ nav ul li {
 
 .header_logo {
   font-family: cursive;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   margin-left: auto;
 }
 
@@ -118,10 +118,52 @@ nav ul li {
 }
 
 .item {
+  display: block;
   padding: 30px;
   width: calc((100% - 30px * 2) / 3);
   background-color: #fff;
+}
+
+.post_img {
+  width: 100%;
+  display: block;
+}
+
+.show_wrap {
+  padding-top: 50px;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.show_item {
+  padding: 30px;
+  width: 80%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.show_img_space {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.show_img {
+  display: flex;
+  justify-content: center;
+}
+
+.show_attribute {
+  margin-left: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.show_menu {
+  position: absolute;
+  bottom: 0;
 }
 
 @media not all and (min-width: 768px) {

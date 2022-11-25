@@ -1,0 +1,1 @@
+$('#favorite_post_<%= params[:post_id] %>').html('<%= j( render '/favorites/heart_yet', post: @post) %>');
