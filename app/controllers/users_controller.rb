@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def edit
     set_user
-    if logged_in?
+    if logged_in? && @user.id == current_user.id
       render :edit
     else
       redirect_to user_path(current_user),  notice:"編集出来ません。作成者のみ編集可能です"

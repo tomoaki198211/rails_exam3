@@ -177,6 +177,16 @@ nav ul li {
   padding-top: 50px;
 }
 
+.my_profile {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.my_img {
+}
+
 @media not all and (min-width: 768px) {
   .item {
     width: 100%;

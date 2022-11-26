@@ -17,11 +17,11 @@
       </div>
       <nav>
         <ul>
-          <li>profile</li>
-          <li><%= link_to 'allposts', posts_path, class: "text-decoration-none text-dark" %></li>
-          <li><%= link_to '+post', new_post_path, class: "text-decoration-none text-dark" %></li>
-          <li><%= link_to 'favorite', favorites_users_path, class: "text-decoration-none text-dark" %></li>
-          <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+          <li><%= link_to 'Profile', user_path(current_user.id), class: "text-decoration-none text-dark" %></li>
+          <li><%= link_to 'Allposts', posts_path, class: "text-decoration-none text-dark" %></li>
+          <li><%= link_to '+Post', new_post_path, class: "text-decoration-none text-dark" %></li>
+          <li><%= link_to 'Favorite', favorites_users_path, class: "text-decoration-none text-dark" %></li>
+          <li><%= link_to "Logout", session_path(current_user.id), method: :delete, class: "text-decoration-none text-dark" %></li>
         </ul>
       </nav>
     </header>

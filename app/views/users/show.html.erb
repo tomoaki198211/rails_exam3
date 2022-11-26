@@ -1,6 +1,16 @@
-<h1><%= @user.name %>のページ</h1>
-<% if @user.myimage && @user.myimage.url %>
-        <%= image_tag @user.myimage.url, class: "card-img-bottom" %>
-<% end %>
-<p>メールアドレス: <%= @user.email %></p>
-<%= link_to "編集", edit_user_path(current_user)  %>
+<div class="my_profile">
+  <div class="card mb-3 p-3" style="width: 30rem;">
+    <div class="card-body">
+      <div class="card-text">
+        <h1>My profile</h1>
+        <p>名前：<%= @user.name %></p>
+        <p>メールアドレス: <%= @user.email %></p>
+      </div>
+    </div>
+    <% if @user.myimage && @user.myimage.url %>
+        <%= image_tag @user.myimage.url, class: "card-img-top my_img" %>
+    <% end %>
+    <%= link_to "編集", edit_user_path(current_user), class: "btn btn-primary"  %>
+  </div>
+</div>
+
