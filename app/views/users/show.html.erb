@@ -10,7 +10,9 @@
     <% if @user.myimage && @user.myimage.url %>
         <%= image_tag @user.myimage.url, class: "card-img-top my_img" %>
     <% end %>
-    <%= link_to "編集", edit_user_path(current_user), class: "btn btn-primary"  %>
+    <% if @user.id == current_user.id %>
+      <%= link_to "編集", edit_user_path(current_user), class: "btn btn-primary"  %>
+    <% end %>
   </div>
 </div>
 
