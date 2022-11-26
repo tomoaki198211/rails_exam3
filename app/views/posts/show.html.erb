@@ -17,9 +17,9 @@
         <% end %>
         <div id="favorite_post_<%= @post.id %>">
           <% if @favorite.present? %>
-            <%= render "/favorites/heart_done", post: @post %>
+            <%= render "/favorites/bookmark_done", post: @post %>
           <% else %>
-            <%= render "/favorites/heart_yet", post: @post %>
+            <%= render "/favorites/bookmark_yet", post: @post %>
           <% end %>
         </div>
       </div>

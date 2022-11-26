@@ -1,2 +1,1 @@
-$('#favorite_post_<%= params[:post_id] %>').html('<%= j( render '/favorites/heart_done', post: @post) %>');
-
+$('#favorite_post_<%= params[:post_id] %>').html('<%= j( render '/favorites/bookmark_done', post: @post) %>');

@@ -1,5 +1,6 @@
+<% if @user.favorite_post.present? %>
 <div class="wrap">
-  <% @posts.each do |post| %>
+  <% @user.favorite_post.each do |post| %>
     <div class="item">
       <%= link_to post_path(post.id), class: "" do %>
         <% if post.picture? %>
@@ -18,4 +19,4 @@
     </div>
   <% end %>
 </div>
-
+<% end %>

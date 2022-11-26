@@ -31,10 +31,14 @@ nav {
 
 nav ul {
   display: flex;
+  align-items: center;
 }
 
 nav li {
   list-style: none;
+}
+nav li a {
+  display: block;
 }
 
 nav ul li {
@@ -54,6 +58,8 @@ nav ul li {
 .form_error_m {
   margin-top: 20px;
   color: red;
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
@@ -151,6 +157,7 @@ nav ul li {
 }
 
 .show_img {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -164,6 +171,10 @@ nav ul li {
 .show_menu {
   position: absolute;
   bottom: 0;
+}
+
+.post_form_outer {
+  padding-top: 50px;
 }
 
 @media not all and (min-width: 768px) {

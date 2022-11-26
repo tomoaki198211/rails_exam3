@@ -1,27 +1,34 @@
-<div class="form_original">
-  <%= form_with(model: @post, local: true, url: choose_new_or_edit ) do |form| %>
-    <div class="form_error_m">
-      <% if @post.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= @post.errors.count %>件のエラーがあります。</h2>
-          <ul>
-            <% @post.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-    <div class="card mb-3 p-3" style="width: 20rem;">
-      <div class="card-body">
-        <%= form.text_area :content, class: "card-text form-control", rows: 10, size: 40 %>
+<div class="post_form_outer">
+  <div class="form_error_m">
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+        <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
       </div>
-      <% if @post.picture && @post.picture.url %>
-        <%= image_tag @post.picture.url, class: "card-img-bottom" %>
-      <% end %>
-      <%= form.file_field :picture %>
-      <%= form.hidden_field :picture_cache %>
-      <%= form.submit class: "btn btn-primary mt-3" %>
+    <% end %>
+  </div>
+  <%= form_with(model: @post, local: true, url: choose_new_or_edit ) do |form| %>
+    <div class="show_wrap">
+      <div class="show_item">
+        <div class="show_img_space">
+          <% if @post.picture && @post.picture.url %>
+            <%= image_tag @post.picture.url, class: "show_img" %>
+          <% end %>
+          <%= form.file_field :picture %>
+          <%= form.hidden_field :picture_cache %>
+        </div>
+        <div class="show_attribute">
+          <%= form.text_area :content, class: "form-control w-100", rows: 10, size: 40 %>
+          <%= form.submit class: "btn btn-primary mt-3" %>
+          <% if action_name == "edit" %>
+            <%= form.submit '戻る',  class: "btn btn-primary mt-3 ml-3", name: 'back' %>
+          <% end %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
