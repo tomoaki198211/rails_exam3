@@ -1,17 +1,26 @@
 <div class="wrap">
   <% @posts.each do |post| %>
     <div class="item">
-      <%= link_to post_path(post.id), class: "" do %>
+      <%= link_to post_path(post.id) do %>
         <% if post.picture? %>
           <%= image_tag post.picture.thumb.url, class: "post_img"%>
         <% end %>
       <% end %>
-      <div id="favorite_post_<%= post.id %>">
-        <% if post.favorites.find_by(user_id: current_user.id) %>
-          <%= render "/favorites/bookmark_done", post: post %>
-        <% else %>
-          <%= render "/favorites/bookmark_yet", post: post %>
-        <% end %>
+      <div class="fl_mark row">
+        <div id="favorite_post_<%= post.id %>">
+          <% if post.favorites.find_by(user_id: current_user.id) %>
+            <%= render "/favorites/bookmark_done", post: post %>
+          <% else %>
+            <%= render "/favorites/bookmark_yet", post: post %>
+          <% end %>
+        </div>
+        <div id="like_post_<%= post.id %>">
+          <% if post.likes.find_by(user_id: current_user.id) %>
+            <%= render "/likes/like_done", post: post %>
+          <% else %>
+            <%= render "/likes/like_yet", post: post %>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>

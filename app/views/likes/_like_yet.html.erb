@@ -1,0 +1,4 @@
+<%= link_to post_like_path(post.id), method: :post, remote: true, class: "ml-1" do %>
+  <i class="fa-regular fa-heart mark_size"></i>
+<% end %>
+<%= post.likes.size %>

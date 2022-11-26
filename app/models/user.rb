@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :favorites, dependent: :destroy
   has_many :favorite_post, through: :favorites, source: :post
+  has_many :likes, dependent: :destroy
+  has_many :like_post, through: :likes, source: :post
   mount_uploader :myimage, MyimageUploader
   validates :name, presence: true, length: { maximum: 30 }
   validates :email, presence: true, length: { maximum: 255 },
