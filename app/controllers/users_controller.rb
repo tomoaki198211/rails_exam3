@@ -39,6 +39,7 @@ class UsersController < ApplicationController
 
   def favorites
     @user = User.find(current_user.id)
+    @posts = @user.favorite_post.order("created_at DESC")
   end
 
   private

@@ -52,6 +52,10 @@ nav ul li {
 }
 
 .flash {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
   color: red;
 }
 
@@ -111,7 +115,7 @@ nav ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-right: 20px;
   background-color: #f0f2f5;
   color: red;
 }
@@ -178,13 +182,13 @@ nav ul li {
 }
 
 .my_profile {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
   padding-top: 50px;
 }
 
 .my_img {
+  width: 100%;
 }
 
 @media not all and (min-width: 768px) {

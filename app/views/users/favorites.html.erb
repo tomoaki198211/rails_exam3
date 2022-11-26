@@ -1,16 +1,14 @@
-<% if @user.favorite_post.present? %>
+<% if @posts.present? %>
 <div class="wrap">
-  <% @user.favorite_post.each do |post| %>
+  <% @posts.each do |post| %>
     <div class="item">
       <%= link_to post_path(post.id), class: "" do %>
         <% if post.picture? %>
           <%= image_tag post.picture.thumb.url, class: "post_img"%>
-        <% else %>
-          <%= post.content %></p>
         <% end %>
       <% end %>
       <div id="favorite_post_<%= post.id %>">
-        <% if post.favorite_user.present? %>
+        <% if post.favorites.find_by(user_id: current_user.id) %>
           <%= render "/favorites/bookmark_done", post: post %>
         <% else %>
           <%= render "/favorites/bookmark_yet", post: post %>
