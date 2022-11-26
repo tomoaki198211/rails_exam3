@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def show
     set_post
     @favorite = current_user.favorites.find_by(post_id: @post.id)
+    @like = current_user.likes.find_by(post_id: @post.id)
   end
 
   def create

@@ -15,12 +15,21 @@
           <%= link_to "edit", edit_post_path(@post.id), class: "ml-1" %>
           <%= link_to "destroy", post_path(@post.id), class: "ml-1",method: :delete ,data: { confirm: "削除してよろしいですか？" } %>
         <% end %>
-        <div id="favorite_post_<%= @post.id %>">
-          <% if @favorite.present? %>
-            <%= render "/favorites/bookmark_done", post: @post %>
-          <% else %>
-            <%= render "/favorites/bookmark_yet", post: @post %>
-          <% end %>
+        <div class="row">
+          <div id="favorite_post_<%= @post.id %>">
+            <% if @favorite.present? %>
+              <%= render "/favorites/bookmark_done", post: @post %>
+            <% else %>
+              <%= render "/favorites/bookmark_yet", post: @post %>
+            <% end %>
+          </div>
+          <div id="like_post_<%= @post.id %>">
+            <% if @like.present? %>
+              <%= render "/likes/like_done", post: @post %>
+            <% else %>
+              <%= render "/likes/like_yet", post: @post %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
