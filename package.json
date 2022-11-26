@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "dev": "NODE_OPTIONS='--openssl-legacy-provider' nuxt",
+    "build": "NODE_OPTIONS='--openssl-legacy-provider' nuxt build",
+    "start": "nuxt start"
+  },
   "name": "rails-exam3",
   "private": true,
   "dependencies": {
