@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   end
   resources :posts, only: [:show] do
     resource :favorite, only: [:create, :destroy]
-  end
-  resources :posts, only: [:show] do
     resource :like, only: [:create, :destroy]
   end
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
